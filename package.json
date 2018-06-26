@@ -1,0 +1,19 @@
+{
+  "name": "simple-ioc",
+  "main": "./index.js",
+  "version": "0.1.0",
+  "scripts": {
+    "test": "jest",
+    "dev": "npm t -- --watchAll --coverage"
+  },
+  "devDependencies": {
+    "jest": "^23.2.0"
+  },
+  "jest": {
+    "verbose": true,
+    "watchPathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/package.json"
+    ]
+  }
+}

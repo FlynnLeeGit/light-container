@@ -1,5 +1,5 @@
 {
-  "name": "@sr/simple-ioc",
+  "name": "light-container",
   "main": "./index.js",
   "version": "0.1.2",
   "scripts": {

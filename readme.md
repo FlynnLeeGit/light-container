@@ -4,7 +4,7 @@ a simplest ioc container,all injected instance is class based,
 no factory,no value,no constant
 
 ```js
-const { SimpleIoc } = require('simple-ioc')
+const { LightContainer } = require('simple-ioc')
 
 class A {
   constructor() {
@@ -23,7 +23,7 @@ class C {
   }
 }
 
-const container = new SimpleIoc().create([A, B, C])
+const container = new LightContainer().create([A, B, C])
 
 // get is Singleton
 console.log(container.get(B) === container.get(B)) // truthy

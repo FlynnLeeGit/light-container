@@ -1,5 +1,5 @@
-const SimpleIoc = require('./lib/simple-ioc')
+const LightContainer = require('./lib/light-container')
 
 module.exports = {
-  SimpleIoc
+  LightContainer
 }

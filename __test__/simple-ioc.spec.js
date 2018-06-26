@@ -1,4 +1,4 @@
-const { SimpleIoc } = require('../index')
+const { LightContainer } = require('../index')
 
 class A {
   constructor() {
@@ -20,44 +20,44 @@ class C {
 
 describe('simple-ioc basic', () => {
   test('should exist', () => {
-    expect(SimpleIoc).toBeDefined()
+    expect(LightContainer).toBeDefined()
   })
   test('should instanceof Ctr', () => {
-    const sc = new SimpleIoc().create([A])
+    const sc = new LightContainer().create([A])
     expect(sc.get(A) instanceof A).toBeTruthy()
   })
   test('should get same instance', () => {
-    const sc = new SimpleIoc().create([A])
+    const sc = new LightContainer().create([A])
     expect(sc.get(A)).toEqual(sc.get(A))
   })
   test('should new instance', () => {
-    const sc = new SimpleIoc().create([A])
+    const sc = new LightContainer().create([A])
     expect(sc.new(A) === sc.new(A)).toBeFalsy()
   })
 
   test('should has api work', () => {
-    const sc = new SimpleIoc().create([A])
+    const sc = new LightContainer().create([A])
     expect(sc.has(A)).toBeTruthy()
   })
 
   test('should new instance can accepet arguments', () => {
-    const sc = new SimpleIoc().create([B])
+    const sc = new LightContainer().create([B])
     expect(sc.new(B, 22)).toEqual({ b: 22 })
   })
 
   test('should throw errors', () => {
-    const sc1 = new SimpleIoc().create()
+    const sc1 = new LightContainer().create()
     expect(() => {
       sc1.get()
     }).toThrow()
-    const sc2 = new SimpleIoc().create([A])
+    const sc2 = new LightContainer().create([A])
     expect(() => {
       sc2.get(B)
     }).toThrow()
   })
 
   test('should inject effect', () => {
-    const sc = new SimpleIoc().create([A, B, C])
+    const sc = new LightContainer().create([A, B, C])
     const c = sc.get(C)
     expect(c.a instanceof A).toBeTruthy()
     expect(c.b instanceof B).toBeTruthy()

@@ -17,7 +17,13 @@ class B {
     this._a = c.get(A)
   }
 }
-const container = new SimpleIoc().create([A, B])
+class C {
+  constructor(c) {
+    this.c = c
+  }
+}
+
+const container = new SimpleIoc().create([A, B, C])
 
 // get is Singleton
 console.log(container.get(B) === container.get(B)) // truthy
@@ -28,6 +34,9 @@ console.log(container.new(B) === container.new(B)) // falsy
 container.has(B) // true
 
 console.log(container.get(B)) // {_a: {a:1} }
+
+// .new with arguments
+container.new(C, 3) // { c:3 }
 ```
 
 ## that's it!

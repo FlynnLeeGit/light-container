@@ -1,10 +1,10 @@
-## simple-ioc
+## light-container
 
 a simplest ioc container,all injected instance is class based,
 no factory,no value,no constant
 
 ```js
-const { LightContainer } = require('simple-ioc')
+const { LightContainer } = require('light-container')
 
 class A {
   constructor() {

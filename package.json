@@ -6,7 +6,7 @@
     "test": "jest",
     "dev": "npm t -- --watchAll --coverage"
   },
-  "typing": "./types/index.d.ts",
+  "typings": "./types/index.d.ts",
   "devDependencies": {
     "jest": "^23.2.0"
   },

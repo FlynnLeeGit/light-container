@@ -19,5 +19,16 @@ class B {
   }
 }
 
-const c = new LightContainer().create([A, B])
+class C {
+  constructor({ name = 'c' }) {
+    this.name = name
+  }
+}
 
+const c = new LightContainer().create([A, B, C])
+
+const C2 = c.getClass(C)
+
+new C2({
+  name: 'a'
+})

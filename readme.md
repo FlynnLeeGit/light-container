@@ -42,6 +42,11 @@ console.log(container.get(B)) // {_a: {a:1} }
 
 // .new with arguments
 container.new(C, 3) // { c:3 }
+
+
+// getClass
+
+container.getClass(A) === A //true
 ```
 
 ## that's it!

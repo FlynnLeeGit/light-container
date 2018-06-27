@@ -20,3 +20,4 @@ class B {
 }
 
 const c = new LightContainer().create([A, B])
+

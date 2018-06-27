@@ -8,5 +8,6 @@ declare module 'light-container' {
     create(providers: Array<{ new (...args) }>): this
     bind<T>(Ctor: Ctor_Static<T>): this
     has<T>(Ctor: Ctor_Static<T>): Boolean
+    getClass(Ctor: any): { new (...args) }
   }
 }

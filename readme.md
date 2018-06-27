@@ -13,6 +13,11 @@ class A {
 }
 class B {
   // inject is a magic method,we inject deps here
+
+  /**
+   * @param {LightContainer} c 
+   *
+  **/
   inject(c) {
     this._a = c.get(A)
   }

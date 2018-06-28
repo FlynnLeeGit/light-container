@@ -45,6 +45,10 @@ describe('simple-ioc basic', () => {
     expect(sc.getClass(A)).toEqual(A)
   })
 
+  test('should get instance can accope arguments', () => {
+    const sc = new LightContainer().create([B])
+    expect(sc.get(B, 22)).toEqual({ b: 22 })
+  })
   test('should new instance can accepet arguments', () => {
     const sc = new LightContainer().create([B])
     expect(sc.new(B, 22)).toEqual({ b: 22 })

@@ -40,6 +40,12 @@ describe('simple-ioc basic', () => {
     expect(sc.has(A)).toBeTruthy()
   })
 
+  test('should get different instance when in different container', () => {
+    const sc1 = new LightContainer().create([A])
+    const sc2 = new LightContainer().create([A])
+    expect(sc1.get(A) === sc2.get(A)).toBeFalsy()
+  })
+
   test('should get original class', () => {
     const sc = new LightContainer().create([A])
     expect(sc.getClass(A)).toEqual(A)
